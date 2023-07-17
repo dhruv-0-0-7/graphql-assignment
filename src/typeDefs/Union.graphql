@@ -1,0 +1,12 @@
+union AuthResult = AuthenticatedUser | LoggedOutUser | Error
+
+union UserResult = User | DeletedUser | Error
+union PostResult = Post | DeletedPost | Error
+union CommentResult = Comment | DeletedComment | Error
+
+union UsersResult = UsersList | Error
+union PostsResult = PostsList | Error
+union CommentsResult = CommentsList | Error
+
+union PostsSubscriptionData = Post | DeletedPost | Error
+union CommentsSubscriptionData = Comment | DeletedComment | Error

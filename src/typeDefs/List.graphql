@@ -1,0 +1,14 @@
+type PostsList {
+  posts: [PostResult!]!
+  count: Int!
+}
+
+type CommentsList {
+  comments: [CommentResult!]!
+  count: Int!
+}
+
+type UsersList {
+  users: [UserResult!]!
+  count: Int!
+}

@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  username  String    @unique
+  email     String    @unique
+  firstName String
+  lastName  String
+  password  String
+  tokens    String[]  @default([])
+  posts     Post[]
+  comments  Comment[]
+}
+
+model Post {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  isPublished Boolean   @default(false)
+  author      User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  comments    Comment[]
+  authorId    String    @db.ObjectId
+}
+
+model Comment {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  text     String
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  post     Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId   String @db.ObjectId
+  authorId String @db.ObjectId
+}

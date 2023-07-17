@@ -1,0 +1,9 @@
+type Query {
+  hello: String!
+  allUsers: UsersResult!
+  allPosts: PostsResult!
+  allComments: CommentsResult!
+  getUser(userId: ID): UserResult!
+  getPost(postId: ID!): PostResult!
+  getComment(commentId: ID!): CommentResult!
+}

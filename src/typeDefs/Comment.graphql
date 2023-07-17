@@ -1,0 +1,11 @@
+type Comment {
+  id: ID!
+  text: String!
+  author: UserResult!
+  post: PostResult!
+}
+
+type DeletedComment {
+  id: ID!
+  text: String!
+}

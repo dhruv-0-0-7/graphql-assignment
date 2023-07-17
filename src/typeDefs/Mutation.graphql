@@ -1,0 +1,15 @@
+type Mutation {
+  signup(input: SignupInput!): AuthResult!
+  login(input: LoginInput!): AuthResult!
+  logout: AuthResult!
+  updateUser(input: UpdateUserInput!): UserResult!
+  deleteUser: UserResult!
+
+  createPost(input: CreatePostInput!): PostResult!
+  updatePost(postId: ID!, input: UpdatePostInput!): PostResult!
+  deletePost(postId: ID!): PostResult!
+
+  createComment(postId: ID!, input: CreateCommentInput!): CommentResult!
+  updateComment(commentId: ID!, input: UpdateCommentInput!): CommentResult!
+  deleteComment(commentId: ID!): CommentResult!
+}

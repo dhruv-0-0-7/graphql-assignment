@@ -1,0 +1,20 @@
+type Subscription {
+  posts(userId: ID!): PostsSubscriptionPayload!
+  comments(postId: ID!): CommentsSubscriptionPayload!
+}
+
+enum MUTATION {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+type PostsSubscriptionPayload {
+  mutation: MUTATION!
+  data: PostsSubscriptionData!
+}
+
+type CommentsSubscriptionPayload {
+  mutation: MUTATION!
+  data: CommentsSubscriptionData!
+}

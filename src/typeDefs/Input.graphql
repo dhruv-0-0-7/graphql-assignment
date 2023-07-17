@@ -1,0 +1,39 @@
+input SignupInput {
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+}
+
+input LoginInput {
+  identity: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  firstName: String
+  lastName: String
+  email: String
+  username: String
+}
+
+input CreatePostInput {
+  title: String!
+  description: String!
+  isPublished: Boolean!
+}
+
+input UpdatePostInput {
+  title: String
+  description: String
+  isPublished: Boolean
+}
+
+input CreateCommentInput {
+  text: String!
+}
+
+input UpdateCommentInput {
+  text: String
+}

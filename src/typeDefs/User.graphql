@@ -1,0 +1,33 @@
+type AuthenticatedUser {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  posts: PostsResult!
+  comments: CommentsResult!
+  token: String!
+}
+
+type LoggedOutUser {
+  id: ID!
+  username: String!
+}
+
+type User {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  posts: PostsResult!
+  comments: CommentsResult!
+}
+
+type DeletedUser {
+  id: ID!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+}
